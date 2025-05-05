@@ -37,10 +37,9 @@ about:
   description: |
     This project aims to help you reach heaven while writing tests, but it may lead you to hell if used on production code.
     It basically allows you to patch built-in objects, declared in C through python.
-  license: LGPL-3.0-only OR MIT
-  license_family: Other
+  license: MIT
+  license_family: MIT
   license_file:
-    - COPYING
     - COPYING.mit
   doc_url: https://clarete.li/forbiddenfruit/
   dev_url: https://github.com/clarete/forbiddenfruit
