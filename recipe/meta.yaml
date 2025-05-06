@@ -10,16 +10,18 @@ source:
   sha256: e3f7e66561a29ae129aac139a85d610dbf3dd896128187ed5454b6421f624253
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.7
+    - python
 
 test:
   imports:
@@ -32,10 +34,15 @@ test:
 about:
   home: https://github.com/clarete/forbiddenfruit
   summary: Patch python built-in objects
-  license: LGPL-3.0-only & MIT
+  description: |
+    This project aims to help you reach heaven while writing tests, but it may lead you to hell if used on production code.
+    It basically allows you to patch built-in objects, declared in C through python.
+  license: MIT
+  license_family: MIT
   license_file:
-    - COPYING
     - COPYING.mit
+  doc_url: https://clarete.li/forbiddenfruit/
+  dev_url: https://github.com/clarete/forbiddenfruit
 
 extra:
   recipe-maintainers:
